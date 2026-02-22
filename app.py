@@ -23,11 +23,31 @@ if bulan != "Semua":
 
 total_sales = data["Penjualan"].sum()
 total_customer = data["Customer"].sum()
+# Hitung growth bulan terakhir vs bulan sebelumnya
+last_sales = df["Penjualan"].iloc[-1]
+prev_sales = df["Penjualan"].iloc[-2]
 
+sales_growth = ((last_sales - prev_sales) / prev_sales) * 100
+
+last_customer = df["Customer"].iloc[-1]
+prev_customer = df["Customer"].iloc[-2]
+
+customer_growth = ((last_customer - prev_customer) / prev_customer) * 100
 col1, col2 = st.columns(2)
 
-col1.metric("Total Sales", f"{total_sales} Juta")
-col2.metric("Total Customer", total_customer)
+with col1:
+    st.metric(
+        "Total Sales",
+        f"{total_sales} Juta",
+        f"{sales_growth:.1f}%"
+    )
+
+with col2:
+    st.metric(
+        "Total Customer",
+        total_customer,
+        f"{customer_growth:.1f}%"
+    )
 
 st.bar_chart(data.set_index("Bulan"))
 st.dataframe(data)
