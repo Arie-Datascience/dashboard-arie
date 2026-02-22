@@ -24,13 +24,13 @@ if bulan != "Semua":
 total_sales = data["Penjualan"].sum()
 total_customer = data["Customer"].sum()
 # Hitung growth bulan terakhir vs bulan sebelumnya
-last_sales = df["Penjualan"].iloc[-1]
-prev_sales = df["Penjualan"].iloc[-2]
+last_sales = data["Penjualan"].iloc[-1]
+prev_sales = data["Penjualan"].iloc[-2]
 
 sales_growth = ((last_sales - prev_sales) / prev_sales) * 100
 
-last_customer = df["Customer"].iloc[-1]
-prev_customer = df["Customer"].iloc[-2]
+last_customer = data["Customer"].iloc[-1]
+prev_customer = data["Customer"].iloc[-2]
 
 customer_growth = ((last_customer - prev_customer) / prev_customer) * 100
 col1, col2 = st.columns(2)
