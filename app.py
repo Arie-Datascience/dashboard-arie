@@ -1,6 +1,10 @@
 import streamlit as st
 import pandas as pd
 
+st.title("📊 Dashboard Penjualan Arie")
+st.markdown("Analisis data penjualan sederhana menggunakan Streamlit")
+Tambah judul dashboard
+
 st.set_page_config(page_title="Dashboard Arie", layout="wide")
 
 st.title("📊 Dashboard Profesional Arie")
