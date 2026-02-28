@@ -9,11 +9,6 @@ st.set_page_config(page_title="Dashboard Arie", layout="wide")
 # ===============================
 # DATA SAMPLE
 # ===============================
-data = pd.DataFrame({
-    "Bulan": ["Jan", "Feb", "Mar", "Apr", "Mei"],
-    "Penjualan": [20, 35, 30, 50, 45],
-    "Customer": [100, 150, 120, 200, 180]
-})
 
 st.sidebar.header("Filter Data")
 
