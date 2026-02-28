@@ -15,6 +15,16 @@ data = pd.DataFrame({
     "Customer": [100, 150, 120, 200, 180]
 })
 
+st.sidebar.header("Filter Data")
+
+bulan = st.sidebar.selectbox(
+    "Pilih Bulan",
+    ["Semua"] + list(data["Bulan"].unique())
+)
+
+if bulan != "Semua":
+    data = data[data["Bulan"] == bulan]
+    
 # ===============================
 # JUDUL
 # ===============================
