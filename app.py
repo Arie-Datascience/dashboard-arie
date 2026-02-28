@@ -26,16 +26,15 @@ if bulan != "Semua":
 st.title("📊 Dashboard Penjualan Arie")
 st.subheader("Upload Data CSV")
 
+uploaded_file = st.file_uploader("Pilih file CSV", type=["csv"])
+st.subheader("Upload Data CSV")
+
 uploaded_file = st.file_uploader("Upload file CSV", type=["csv"])
 
 if uploaded_file is not None:
     data = pd.read_csv(uploaded_file)
 else:
-    data = pd.DataFrame({
-        "Bulan": ["Jan", "Feb", "Mar", "Apr", "Mei"],
-        "Penjualan": [20, 35, 30, 50, 45],
-        "Customer": [100, 150, 130, 200, 180]
-    })
+ 
     
 st.markdown("Analisis Data Sederhana dengan Streamlit 🚀")
 
